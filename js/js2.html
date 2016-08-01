@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<style>
+		#div{
+			height:200px;
+			width:200px;
+			background:grey;
+		}	
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			//$("#div").hide(3000);	
+			$("#div1").html('你哈后');
+			$('.div2').css('backgroundColor','pink');
+			$('p').css('fontSize','30px');
+			$('#div1+.div2').hide(4000);
+		};
+	}
+	</script>
+</head>
+<body>
+	<div id = "div1"></div>
+	<div class='div2'>hello</div>
+	<p>妖怪，哪里跑？</p>
+	<input type="button" id="btn" value="按钮"></input>
+</body>
+</html>

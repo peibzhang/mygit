@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<title>搜索中心 - {dede:global.cfg_webname/}</title>
+<link href="{dede:global.cfg_basehost/}/yunteng_cc_images/www.haiyoushei.net.style.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_basehost/}/yunteng_cc_images/www.haiyoushei.net.index.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_basehost/}/yunteng_cc_images/www.haiyoushei.net.cloudcms.css" rel="stylesheet" type="text/css">
+{dede:include filename="top.htm"/}
+<div id="box">
+	<div id="box_main">
+    	<div id="box_left">
+        	{dede:list pagesize='5' titlelen='180'}
+			<div id="box_left_div">
+            	<div id="box_left_div_img">
+                	<a href="[field:arcurl/]"><img src="[field:litpic/]"></a>
+                </div>
+                <div id="box_left_div_info">
+                	<h2><a href="[field:arcurl/]">[field:title/]</a></h2>
+                    <ul>
+                    	<i><a href="[field:typeurl/]">[field:typename/]</a></i>
+                        <i><a>[field:pubdate function='strftime("%Y-%m-%d",@me)'/]</a></i>
+                        <i><a>作者：[field:writer/]</a></i>
+                    </ul>
+                    <ul>
+                    	<li><a>[field:info/]</a></li>
+                    </ul>
+                </div>
+            </div>
+            {/dede:list}
+            <div id="box_left_ytimg">
+            	<a href="http://www.qcloud.com/redirect.php?redirect=1001&cps_key=26a6c4eb6fda8bff65b792f74cb831ff" target="_blank"><img src="{dede:global.cfg_basehost/}/yunteng_cc_images/ytimg_01.jpg"></a>
+            </div>
+		</div>
+        <div id="box_right">
+        	<div id="box_right_div">
+            	<h2><strong id="box_right_div_h2_strong_tui"><a>搜索中心</a></strong></h2>
+                <ul id="box_right_div_list_ul">
+                	<li>您现在搜索的是：</li>
+                    <li><a>“{dede:global name='keyword' function='RemoveXSS(@me)'/}”</a></li>
+                </ul>
+            </div>
+        	<div id="box_right_div">
+            	<h2><strong id="box_right_div_h2_strong_link"><a>热点搜索</a></strong></h2>
+                <ul id="box_right_div_list_link">
+                    <li><a href="/plus/search.php?kwtype=0&keyword=还有谁">还有谁</a></li>
+                    <li><a href="/plus/search.php?kwtype=0&keyword=张世奇">张世奇</a></li>
+                    <li><a href="http://www.qcloud.com/redirect.php?redirect=1001&cps_key=26a6c4eb6fda8bff65b792f74cb831ff">腾讯云</a></li>
+                    <li><a href="/plus/search.php?kwtype=0&keyword=php">PHP</a></li>
+                    <li><a href="/plus/search.php?kwtype=0&keyword=渗透">渗透</a></li>
+                    <li><a href="/plus/search.php?kwtype=0&keyword=入侵">入侵</a></li>
+                </ul>
+            </div>
+            <div id="box_right_div">
+            	<h2><strong id="box_right_div_h2_strong_adimg"><a>广告赞助</a></strong></h2>
+            	<ul id="box_right_div_list_adimg">
+                	<a href="http://www.haiyoushei.net" target="_blank"><img src="{dede:global.cfg_basehost/}/yunteng_cc_images/adimg_01.jpg"></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{dede:include filename="footer.htm"/}

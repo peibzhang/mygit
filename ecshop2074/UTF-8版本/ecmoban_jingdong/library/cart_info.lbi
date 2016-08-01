@@ -1,0 +1,37 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<p><a class="shopborder track" href="flow.php" id="shoppingcar_link">我的购物车<span car_product_total="shoppingCar_product_totalcount">{$number}</span></a><i></i><s>></s></p>
+<div class="shopDropList"> 
+  <!--{if $cart_list}-->
+  <div class="havepru">
+    <div class="havepruTop"></div>
+    <div class="havepruMid">
+      <h2>最近加入的商品：</h2>
+      <ul>
+        <!--{foreach from=$cart_list item=goods}-->
+        
+        <li>
+          <div class="carListLeft"> <a href="{$goods.url}"><img width="36" heigth="36" alt="{$goods.name}" src="{$goods.thumb}"></a></div>
+          <div class="carListRight">
+            <h3><a title="{$goods.name}" href="{$goods.url}">{$goods.short_name}</a></h3>
+            <span class="blank0"></span>
+            <div class="priceArea"> <strong>￥{$goods.shop_price}</strong><em>×{$goods.goods_number}</em> </div>
+          </div>
+          <div class="carListDelect"> <a style="cursor:pointer;" class="track" href="javascript:deleteCartGoods({$goods.rec_id});">删除</a></div>
+          <span class="blank0"></span></li>
+        <!--{/foreach}-->
+      </ul>
+      <div class="ShopCarPageLine"></div>
+      <div class="ShopCarPage">
+        <div class="SCtotalpage">
+          <div>共计<span>￥{$amount}</span></div>
+          <strong><a rel="nofollow" href="flow.php" class="track">查看购物车(<span car_product_total="shoppingCar_product_totalcount">{$number}</span>件)</a></strong> <span class="blank0"></span> </div>
+      </div>
+    </div>
+    <div class="havepruBom"></div>
+  </div>
+  <!--{else}-->
+  <div class="shopnopru">
+    <div class="SCtotalpageno">您的购物车中没有任何商品</div>
+    <div class="SCtotalpageBottom"></div>
+  </div>
+  <!--{/if}--> </div>

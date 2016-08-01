@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+		/*window.onload=function(){
+			alert('页面加载成功');
+		}*/
+		/*jQuery(document).ready(function() {
+			console.log(222);
+		});*/
+		/*$(document).ready(function() {
+			console.log(333);
+		});*/
+		/*$(function(){
+			alert(123);
+		});*/
+		$.ajax({
+			url: 'ajax.php',
+			type: 'default GET (Other values: POST)',
+			dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+			data: {param1: 'value1'},
+		})
+		.done(function() {
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	</script>
+</head>
+<body>
+	<img src="../class.php">
+</body>
+</html>

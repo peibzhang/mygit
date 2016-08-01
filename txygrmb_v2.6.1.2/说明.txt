@@ -1,0 +1,23 @@
+最新源码公布地址：www.haiyoushei.net/tool/news_6.html
+
+后台目录：cloud/index.php
+安装目录：install/index.php
+图片目录：yunteng_cc_images/*.jpg\*.png
+样式目录：yunteng_cc_images/*.css
+模版目录：yunteng_cc_templets/default
+
+还有谁个人博客 v2.6.1.2 更新日志：
+1.优化安装数据库表
+2.优化前端响应效果
+3.增加软件商品列表
+4.更名还有谁个人博客系统
+
+本程序可在腾讯云论坛、站长源码、A5源码共享下载，其他下载站未授权，如出现任何问题概不负责！
+
+腾讯云论坛：http://bbs.qcloud.com（由腾讯云版主负责更新程序，论坛免费解答小白问题。）
+
+站长源码：http://down.chinaz.com（感谢提供下载平台）
+
+A5源码：http://down.admin5.com（感谢提供下载平台）
+
+精简源码作者QQ：503827438　　　QQ群：91695509（推荐加群）

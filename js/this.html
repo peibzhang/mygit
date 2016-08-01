@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('input').on('mousedown',function(){
+				$(this).val('帅男');
+			});
+			$('input').on('mouseup',function(){
+				$(this).val('美女');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div></div>
+	<input type="button" id="btn" value="按钮"></input>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<div class="header-all">
+  <div class="top clearfix">
+    <ul class="logo"><a href="http://{sucms:siteurl}"><i class="logobg"></i></a></ul>
+    <ul class="top-nav">
+      <li><a class="now" href="{sucms:indexlink}">首页</a></li>
+      {sucms:menulist type=top}
+      {if:[menulist:typeid]>2}
+      <li><a href="[menulist:link]"{subif:"{sucms:currenttypeid}"=="[menulist:typeid]"} class="on"{end subif}>[menulist:typename]</a></li>
+      {else}
+      <li class="" _t_nav="topnav-[menulist:i]"><a href="[menulist:link]"{subif:"{sucms:currenttypeid}"=="[menulist:typeid]"} class="on"{end subif}>[menulist:typename]<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
+      {end if}
+      {/sucms:menulist}
+      <li><a href="{sucms:topiclink}">专题</a></li>
+      <li class="" _t_nav="topnav-news"><a href="{sucms:newslink}">新闻<i class="sjbgs"></i><i class="sjbgx"></i></a></li>
+      <li><a href="/plus/gbook.php">留言</a></li>
+    </ul>
+    <ul class="search so">
+      <form name="formsearch" id="formsearch" action='/search.php' method="post"  target="_self" autocomplete="off">
+          <input class="input" name="searchword" type="text" id="keyword" placeholder="请输入影片或演员名" />
+          <div class="so-key">{sucms:keywords}</div>
+          <input class="imgbt" type="submit" value=""/>
+      </form>
+    </ul>
+    <ul class="nav-qt aa">
+      <li class="bb"><a href="javascript:void(0)" onMouseOver="$MH.showHistory(1);"><i class="jl"></i>观看历史</a>
+      <div class="cc">
+	  <script type="text/javascript" src="/skin/js/history.js"></script>
+          <script type="text/javascript">$MH.limit=10;$MH.WriteHistoryBox(180,170,'font');$MH.recordHistory({name:'{playpage:name}',link:'{playpage:url}',pic:'{playpage:pic}'})</script></div>
+      </li>
+      <li class="bb"><strong class="ma"><i class="mabg"></i>手机观看</strong>
+      <div class="cc maw"><i class="ewmbg"></i><p>扫描二维码用手机观看</p></div>  
+      </li>
+    </ul>
+    <ul class="sj-search">
+      <li class="sbtn2"><i class="sjbg-search"></i></li>
+    </ul>
+    <ul class="sj-nav">
+      <li class="sbtn1"><i class="sjbg-nav"></i></li>
+    </ul>
+    <ul class="sj-navhome">
+      <li><a href="{sucms:indexlink}"><i class="sjbg-home"></i></a></li>
+    </ul>  
+  </div>
+  <div class="nav-down clearfix">
+  {sucms:menulist type=top}
+  {if:[menulist:typeid]<3}
+  <div id="topnav-[menulist:i]" class="nav-down-1" style="display:none;" _t_nav="topnav-[menulist:i]">
+    <div class="nav-down-2 clearfix">
+    <ul>
+      {sucms:smallmenulist type=[menulist:typeid]}     
+      <li><a href="[smallmenulist:link]"{subif:"{sucms:currenttypeid}"=="[smallmenulist:typeid]"} class="on"{end subif}>[smallmenulist:typename]</a></li>
+      {/sucms:smallmenulist}
+    </ul>
+    </div>
+  </div>
+  {end if}
+  {/sucms:menulist}
+  <div id="topnav-news" class="nav-down-1" style="display:none;" _t_nav="topnav-news">
+    <div class="nav-down-2 clearfix">
+    <ul>
+      {sucms:menulist by=news type=top}     
+      <li><a href="[menulist:link]">[menulist:typename]</a></li>
+      {/sucms:menulist}
+    </ul>
+    </div>
+  </div>
+  <div id="sj-nav-1" class="nav-down-1 sy1 sj-noover" style="display:none;" _s_nav="sj-nav-1">
+    <div class="nav-down-2 sj-nav-down-2 clearfix">
+    <ul> 
+      <li><a href="{sucms:indexlink}">首页</a></li>
+    {sucms:menulist type=all}    
+      <li><a href="[menulist:link]"{if:"{sucms:currenttypeid}"=="[menulist:typeid]"} class="on"{end if}>[menulist:typename]</a></li>
+    {/sucms:menulist}
+      <li><a href="{sucms:topiclink}">专题</a></li>
+      <li><a href="{sucms:newslink}">新闻</a></li>
+      <li><a href="/plus/gbook.php">留言</a></li>
+    </ul>
+    </div>
+  </div>
+  <div id="sj-nav-search" class="nav-down-1 sy2 sj-noover" style="display:none;" _t_nav1="sj-nav-search">
+    <div class="nav-down-2 sj-nav-down-search clearfix">
+    <form name="formsearch" id="formsearch" action='/{sucms:sitepath}search.php' method="post"  target="_self" autocomplete="off">
+          <input class="input" name="searchword" type="text" id="keyword" placeholder="输入关键词"/>
+          <input class="imgbt" type="submit" value="搜索"/>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<div class="topone clearfix"></div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<style type="text/css">
+		#div1{
+			width: 100px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			document.getElementById('btn').onclick=function(){
+				var h = $('#div1').width(2001);
+				console.log(h);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<div></div>
+	<div id="div2"></div>
+	<input type="button" id="btn" value="宽高"></input>
+</body>
+</html>

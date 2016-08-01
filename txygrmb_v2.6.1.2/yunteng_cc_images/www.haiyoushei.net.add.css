@@ -1,0 +1,27 @@
+#box_left_info_plug_yan{
+	width:100%;
+	float:left;
+	margin-top:20px;
+}
+@media (max-width:850px){
+	#box_left_info_plug_yan{
+		display:none;
+	}
+}
+.section-service-w{
+	text-indent:-9999px !important;
+	font-size:0 !important;
+}
+#SOHUCS #SOHU_MAIN .module-wechat-qr-code .qr-code-wrapper .qr-code-logo-wrapper .qr-code-logo, .cy-user-page-main .module-wechat-page-qr-code .qr-code-wrapper .qr-code-logo-wrapper .qr-code-logo{
+	background-image:url(qr-code-logo.png) !important;
+}
+#SOHUCS #SOHU_MAIN .module-wechat-qr-code .qr-code-wrapper .qr-code-type-wrapper .qr-code-text, .cy-user-page-main .module-wechat-page-qr-code .qr-code-wrapper .qr-code-type-wrapper .qr-code-text{
+	text-indent:-9999px !important;
+	font-size:0 !important;
+}
+.module-cy-user-page .module-cy-user-info .module-user-info-qr-code .qr-code-wrapper .qr-code-type-wrapper .qr-code-text{
+	text-indent:-9999px !important;
+	font-size:0 !important;
+}
+.prop-lead{
+}

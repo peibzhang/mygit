@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<title>{dede:field.title/} - {dede:field name='typename'/} - {dede:global.cfg_webname/}</title>
+<link href="{dede:global.cfg_basehost/}/yunteng_cc_images/www.haiyoushei.net.style.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_basehost/}/yunteng_cc_images/www.haiyoushei.net.index.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_basehost/}/yunteng_cc_images/www.haiyoushei.net.cloudcms.css" rel="stylesheet" type="text/css">
+{dede:include filename="top.htm"/}
+<div id="box">
+	<div id="box_main">
+    	<div id="box_left">
+			<div id="box_left_info">
+            	<div id="box_left_info_main">
+                	<div id="box_left_info_main_h2"><strong>【{dede:field name='typename'/}】{dede:field.title/}</strong></div>
+                    <div id="box_left_info_main_info">
+                    	<span id="box_left_info_main_info_50">商品卖家：{dede:field.writer/}</span>
+                        <span id="box_left_info_main_info_50">商品品牌：{dede:field.brand/}</span>
+                        <span id="box_left_info_main_info_50">商品原价：{dede:field.price/}</span>
+                        <span id="box_left_info_main_info_50">商品现价：{dede:field.trueprice/}</span>
+                        <span id="box_left_info_main_info_50">商品单位：{dede:field.units/}</span>
+                    	<span id="box_left_info_main_info_50">联系QQ：{dede:field.lianxiqq/}</span>
+                    </div>
+                    <div id="box_left_info_main_ul">
+                    	{dede:field.body/}
+                    </div>
+                </div>
+                <div id="box_left_info_plug">
+                	<div id="box_left_info_plug_copy">
+                    	版权所有 还有谁博客 转载时必须以连接形式注明作者和原始出处<br><a href="{dede:global.cfg_basehost/}{dede:field name='arcurl'/}">[ {dede:global.cfg_basehost/}{dede:field name='arcurl'/} ]</a>
+                    </div>
+                	<div id="box_left_info_plug_page">
+                    	<ul>
+                        	<li>{dede:prenext get='pre'/}</li>
+                            <li>{dede:prenext get='next'/}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box_right">
+        	{dede:include filename="right.htm"/}
+        </div>
+    </div>
+</div>
+{dede:include filename="footer.htm"/}

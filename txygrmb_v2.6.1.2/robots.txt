@@ -1,0 +1,8 @@
+User-agent: * 
+Disallow: /cloud
+Disallow: /install
+Disallow: /include
+Disallow: /yunteng_cc_data
+Disallow: /yunteng_cc_plus
+Disallow: /yunteng_cc_images
+Disallow: /yunteng_cc_templets

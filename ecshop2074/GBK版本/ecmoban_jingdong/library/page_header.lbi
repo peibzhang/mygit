@@ -1,0 +1,146 @@
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<link href="themes/ecmoban_moonbasa2013/qq/images/qq.css" rel="stylesheet" type="text/css" />
+   {insert_scripts files='transport.js,utils.js'}
+ <div id="Head">
+  <div id="headerTopArea" class="headerTopAreaBox">
+    <div class="headerTopArea">
+      <div class="headerTop">
+        <div class="headerTopLeft">
+        	<ul>
+            	{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}
+                <li>
+                	<div class="dt">
+                    	<s></s>
+                        <a class="track" href="user.php?act=order_list">我的订单</a>
+                    </div>
+                </li>
+                <li>
+                	<div class="dt">
+                    	<s></s>
+                        <a href="javascript:bookmark();" id="vanclFavorite">收藏本站</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="headerTopRight">
+        	<ul>
+            	<li>
+                	<div class="dt">
+                        <a href="user.php" target="_blank">我的京东</a>
+                    </div>
+                </li>
+                <!--{if $navigator_list.top}--> 
+                <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+                <li>
+                	<div class="dt">
+                    	<s></s>
+                        <a href="{$nav.url}" class="mapDropTitle track mapTitle" {if $nav.opennew eq 1} target="_blank" {/if}>{$nav.name}</a>
+                    </div>
+                </li>
+                <!-- {/foreach} --> 
+                <!-- {/if} -->
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="LogoSearchBar" id="logoArea">
+    <div class="logoSearchSubnavArea">
+      <h1 class="logoArea"><a href="index.php" class="track"><img src="images/logo.gif" /></a></h1>
+      <div class="searchAreaBlock">
+        <div class="searchLeft">
+          <ul id="searchBar" class="searchBar">
+          </ul>
+          <div class="searchInt">
+            <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+              <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="searchText ac_input" />
+              <input type="submit" value="搜索" name="imageField" class="searchBtn" style="cursor:pointer;">
+            </form>
+          </div>
+          {if $searchkeywords}
+          <div class="searchWordsBox">
+            <div class="searchWords"> {foreach from=$searchkeywords item=val} <a href="search.php?keywords={$val|escape:url}" class="track">{$val}</a> {/foreach} </div>
+          </div>
+          {/if} </div>
+        <div class="menuTopRight">
+          <div id="shoppingCarNone" class="active"> {insert name='cart_info'} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+<div style="clear:both"></div>
+ 
+<div class="menu_box clearfix"> 
+<div class="block"> 
+<div class="menu">
+  <a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}<span></span></a>
+  <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+  <a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>
+{$nav.name}
+ <span></span>
+</a>
+ 
+ <!-- {/foreach} -->
+</div> 
+</div>
+</div>
+<script type="text/javascript">
+/*收藏夹功能*/
+function bookmark() {
+	var httpUrl="http://"+location.hostname;
+    var c;
+    var a = /^http{1}s{0,1}:\/\/([a-z0-9_\\-]+\.)+(yihaodian|1mall|111|yhd){1}\.(com|com\.cn){1}\?(.+)+$/;
+    if (a.test(httpUrl)) {
+        c = "&ref=favorite"
+    } else {
+        c = "?ref=favorite"
+    }
+    var d = httpUrl + c;
+    if ('undefined' == typeof (document.body.style.maxHeight)) {
+        d = httpUrl
+    }
+    try {
+        if (document.all) {
+            window.external.AddFavorite(d, favorite)
+        } else {
+            try {
+                window.sidebar.addPanel(favorite, d, "")
+            } catch(b) {
+                alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加")
+            }
+        }
+    } catch(b) {
+        alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加")
+    }
+}
+
+
+function deleteCartGoods(rec_id)
+{
+	Ajax.call('delete_cart_goods.php', 'id='+rec_id, deleteCartGoodsResponse, 'POST', 'JSON');
+}
+
+/**
+ * 接收返回的信息
+ */
+function deleteCartGoodsResponse(res)
+{
+  if (res.error)
+  {
+    alert(res.err_msg);
+  }
+  else
+  {
+	  $("#shoppingCarNone").html(res.content);
+  }
+}
+</script> 
+ 
+
+ 
+
+
+
